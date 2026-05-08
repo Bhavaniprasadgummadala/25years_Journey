@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>25 Years — Amma & Nanna</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Sans+Telugu:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --gold-dim: #7a6230;
+    --cream: #f5ede0;
+    --dark: #0d0a07;
+    --warm: #1a1208;
+    --text: #e8dcc8;
+    --muted: #9a8a70;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x: hidden;
+  }
+
+  /* ── GRAIN OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 999;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none; opacity: 0.4;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 4rem 2rem;
+    background: radial-gradient(ellipse at center, #2a1a08 0%, #0d0a07 70%);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(201,168,76,0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(201,168,76,0.06) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .rangoli {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    animation: floatIn 2s ease forwards;
+    opacity: 0;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 7vw, 5rem);
+    font-weight: 400;
+    color: var(--gold-light);
+    line-height: 1.15;
+    letter-spacing: 0.02em;
+    animation: fadeUp 2s ease 0.4s forwards;
+    opacity: 0;
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-style: italic;
+    color: var(--muted);
+    margin-top: 1rem;
+    letter-spacing: 0.15em;
+    animation: fadeUp 2s ease 0.8s forwards;
+    opacity: 0;
+  }
+
+  .divider-line {
+    width: 120px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 2rem auto;
+    animation: fadeUp 2s ease 1s forwards;
+    opacity: 0;
+  }
+
+  .hero-year {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 10vw, 7rem);
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    animation: fadeUp 2s ease 1.2s forwards;
+    opacity: 0;
+    text-shadow: 0 0 60px rgba(201,168,76,0.3);
+  }
+
+  .hero-years-label {
+    font-size: 1.1rem;
+    color: var(--muted);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    animation: fadeUp 2s ease 1.5s forwards;
+    opacity: 0;
+  }
+
+  /* ── INTRO NOTE ── */
+  .intro-note {
+    text-align: center;
+    padding: 5rem 2rem 3rem;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .intro-note p {
+    font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+    font-style: italic;
+    color: var(--muted);
+    line-height: 1.9;
+    letter-spacing: 0.02em;
+  }
+
+  .intro-note span {
+    color: var(--gold-light);
+    font-style: normal;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 2rem 6rem;
+    position: relative;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, transparent, var(--gold-dim) 10%, var(--gold-dim) 90%, transparent);
+    transform: translateX(-50%);
+  }
+
+  /* ── CHAPTER ── */
+  .chapter {
+    margin-bottom: 5rem;
+    position: relative;
+  }
+
+  .chapter-label {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .chapter-label .year-badge {
+    display: inline-block;
+    background: var(--warm);
+    border: 1px solid var(--gold-dim);
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    padding: 0.4rem 1.5rem;
+    letter-spacing: 0.15em;
+    position: relative;
+    z-index: 1;
+  }
+
+  .chapter-label .chapter-title {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    color: var(--gold-light);
+    margin-top: 0.7rem;
+    line-height: 1.3;
+  }
+
+  /* ── LINES (cards) ── */
+  .lines-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+
+  .line-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding: 0;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .line-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .line-card.left { flex-direction: row; }
+  .line-card.right { flex-direction: row-reverse; }
+
+  .line-icon {
+    flex-shrink: 0;
+    width: 36px; height: 36px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    margin-top: 0.2rem;
+  }
+
+  .line-text {
+    flex: 1;
+  }
+
+  .line-text p {
+    font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+    line-height: 1.85;
+    color: var(--text);
+    font-weight: 300;
+  }
+
+  .line-text p em {
+    color: var(--gold-light);
+    font-style: italic;
+  }
+
+  .line-text p strong {
+    color: var(--cream);
+    font-weight: 400;
+  }
+
+  .line-text .telugu-line {
+    display: block;
+    font-family: 'Noto Sans Telugu', sans-serif;
+    font-size: 0.85rem;
+    color: var(--gold-dim);
+    margin-top: 0.3rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── PAIN LINES — darker cards ── */
+  .line-card.pain .line-text p {
+    color: #c8b898;
+    font-style: italic;
+  }
+
+  /* ── CLIMAX ── */
+  .climax-section {
+    text-align: center;
+    padding: 4rem 2rem 2rem;
+    position: relative;
+  }
+
+  .climax-glow {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(201,168,76,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .climax-line {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 4vw, 2.4rem);
+    color: var(--gold-light);
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+    font-style: italic;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+
+  .climax-line.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── FINAL CARD ── */
+  .final-section {
+    text-align: center;
+    padding: 5rem 2rem 8rem;
+    background: radial-gradient(ellipse at center, #1e1108 0%, #0d0a07 70%);
+    position: relative;
+  }
+
+  .final-section::before {
+    content: '❁';
+    display: block;
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    opacity: 0.6;
+  }
+
+  .final-names {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 5vw, 3rem);
+    color: var(--gold);
+    font-style: italic;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transition: opacity 1.2s ease 0.3s;
+  }
+
+  .final-names.visible { opacity: 1; }
+
+  .final-line {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: var(--muted);
+    font-style: italic;
+    line-height: 1.9;
+    max-width: 600px;
+    margin: 0 auto 0.8rem;
+    opacity: 0;
+    transition: opacity 1.2s ease 0.6s;
+  }
+
+  .final-line.visible { opacity: 1; }
+
+  .final-blessing {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 3.5vw, 2rem);
+    color: var(--gold-light);
+    margin-top: 2.5rem;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transition: opacity 1.5s ease 1s;
+  }
+
+  .final-blessing.visible { opacity: 1; }
+
+  .heart { color: #c0392b; font-size: 1.4em; }
+
+  /* ── SCRIPT EXPORT SECTION ── */
+  .export-section {
+    background: var(--warm);
+    border-top: 1px solid var(--gold-dim);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .export-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .export-btn {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    padding: 0.7rem 2.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+  }
+
+  .export-btn:hover {
+    background: var(--gold);
+    color: var(--dark);
+  }
+
+  /* ── SCRIPT LIST ── */
+  #script-output {
+    display: none;
+    max-width: 800px;
+    margin: 2rem auto 0;
+    text-align: left;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--gold-dim);
+    padding: 2rem;
+  }
+
+  #script-output.show { display: block; }
+
+  #script-output ol {
+    list-style: none;
+    counter-reset: line-counter;
+  }
+
+  #script-output ol li {
+    counter-increment: line-counter;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    font-size: 0.95rem;
+    color: var(--text);
+    display: flex;
+    gap: 1rem;
+  }
+
+  #script-output ol li::before {
+    content: counter(line-counter, decimal-leading-zero);
+    color: var(--gold-dim);
+    font-size: 0.75rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+    font-family: monospace;
+    min-width: 28px;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes floatIn {
+    from { opacity: 0; transform: scale(0.6); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    .timeline::before { left: 20px; }
+    .line-card { flex-direction: row !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="rangoli">🪔</div>
+  <h1 class="hero-title">Amma & Nanna</h1>
+  <p class="hero-sub">A love that carried a family on its shoulders</p>
+  <div class="divider-line"></div>
+  <div class="hero-year">25</div>
+  <p class="hero-years-label">Years of Togetherness</p>
+</section>
+
+<!-- ── INTRO ── -->
+<div class="intro-note">
+  <p>
+    Some love stories are not written in poetry.<br>
+    They are written in <span>sacrifice</span>, in <span>silence</span>,<br>
+    in the tears that children never saw —<br>
+    and in a stubborn, beautiful <span>refusal to give up.</span>
+  </p>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TIMELINE
+══════════════════════════════════════════ -->
+<div class="timeline">
+
+  <!-- CHAPTER 1 -->
+  <div class="chapter">
+    <div class="chapter-label">
+      <div class="year-badge">6 May 2001</div>
+      <div class="chapter-title">The Beginning of Everything</div>
+    </div>
+    <div class="lines-block">
+      <div class="line-card left">
+        <div class="line-icon">🌸</div>
+        <div class="line-text"><p>Two souls stood before God and family, and said — <em>"I choose you."</em></p></div>
+      </div>
+      <div class="line-card left">
+        <div class="line-icon">🪔</div>
+        <div class="line-text"><p>She tied her life to his with flowers in her hair and hope in her heart.</p></div>
+      </div>
+      <div class="line-card left">
+        <div class="line-icon">🤝</div>
+        <div class="line-text"><p>He promised her a life — not knowing how much courage that promise would demand.</p></div>
+      </div>
+      <div class="line-card left">
+        <div class="line-icon">✨</div>
+        <div class="line-text"><p>That day, a family was not just formed — <em>it was born.</em></p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 2 -->
+  <div class="chapter">
+    <div class="chapter-label">
+      <div class="year-badge">2001 — 2003</div>
+      <div class="chapter-title">When Dreams Met Reality</div>
+    </div>
+    <div class="lines-block">
+      <div class="line-card right pain">
+        <div class="line-icon">🌧️</div>
+        <div class="line-text"><p>The road wasn't paved with gold — it was rough, unlit, and long.</p></div>
+      </div>
+      <div class="line-card right pain">
+        <div class="line-icon">💪</div>
+        <div class="line-text"><p>But they walked it — <strong>together</strong> — never letting the other fall alone.</p></div>
+      </div>
+      <div class="line-card right pain">
+        <div class="line-icon">🙏</div>
+        <div class="line-text"><p>Every prayer they offered was not for themselves — it was for each other.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 3 -->
+  <div class="chapter">
+    <div class="chapter-label">
+      <div class="year-badge">4 July 2004</div>
+      <div class="chapter-title">A Cry That Changed Everything</div>
+    </div>
+    <div class="lines-block">
+      <div class="line-card left">
+        <div class="line-icon">👶</div>
+        <div class="line-text"><p>On a summer morning, the world gave them its greatest gift —</p></div>
+      </div>
+      <div class="line-card left">
+        <div class="line-icon">🌟</div>
+        <div class="line-text"><p>A baby's cry filled the room, and two hearts <em>broke open with joy.</em></p></div>
+      </div>
+      <div class="line-card left">
+        <div class="line-icon">🏠</div>
+        <div class="line-text"><p>That night, Nanna held his firstborn and understood — <em>everything he worked for now had a face.</em></p></div>
+      </div>
+      <div class="line-card left">
+        <div class="line-icon">🤱</div>
+        <div class="line-text"><p>Amma became a mother — and she was <strong>made for it.</strong></p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 4 -->
+  <div class="chapter">
+    <div class="chapter-label">
+      <div class="year-badge">2005 — 2007</div>
+      <div class="chapter-title">Hyderabad — The Big Dream</div>
+    </div>
+    <div class="lines-block">
+      <div class="line-card right">
+        <div class="line-icon">🏙️</div>
+        <div class="line-text"><p>They packed their lives and moved to the city — <em>for a better tomorrow.</em></p></div>
+      </div>
+      <div class="line-card right">
+        <div class="line-icon">🏪</div>
+        <div class="line-text"><p>Nanna opened a shop with sweat, savings, and a stubborn dream.</p></div>
+      </div>
+      <div class="line-card right">
+        <div class="line-icon">📈</div>
+        <div class="line-text"><p>Business grew. Life smiled. For a while — <strong>the city felt like home.</strong></p></div>
+      </div>
+      <div class="line-card right">
+        <div class="line-icon">🌅</div>
+        <div class="line-text"><p>Amma ran the home like a temple — warm, quiet, full of love.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 5 -->
+  <div class="chapter">
+    <div class="chapter-label">
+      <div class="year-badge">14 December 2008</div>
+      <div class="chapter-title">The Second Blessing</div>
+    </div>
+    <div class="lines-block">
+      <div class="line-card left">
+        <div class="line-icon">🌺</div>
+        <div class="line-text"><p>God blessed them again — another heartbeat joined their home.</p></div>
+      </div>
+      <div class="line-card left">
+        <div class="line-icon">👨‍👩‍👦‍👦</div>
+        <div class="line-text"><p>Their family was <em>complete.</em> Two sons. One dream. No limits.</p></div>
+      </div>
+      <div class="line-card left">
+        <div class="line-icon">🎉</div>
+        <div class="line-text"><p>That December was the warmest winter they had ever felt.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 6 — PAIN -->
+  <div class="chapter">
+    <div class="chapter-label">
+      <div class="year-badge">2009 — 2012</div>
+      <div class="chapter-title">The Test No Parent Asks For</div>
+    </div>
+    <div class="lines-block">
+      <div class="line-card right pain">
+        <div class="line-icon">💔</div>
+        <div class="line-text"><p>The little one's heart — <em>the one that held so much love —</em> needed help.</p></div>
+      </div>
+      <div class="line-card right pain">
+        <div class="line-icon">🏥</div>
+        <div class="line-text"><p>Hospital visits became their routine. Prayers became their breath.</p></div>
+      </div>
+      <div class="line-card right pain">
+        <div class="line-icon">💸</div>
+        <div class="line-text"><p>To save their child, they sold the shop — <strong>without a second thought.</strong></p></div>
+      </div>
+      <div class="line-card right pain">
+        <div class="line-icon">😔</div>
+        <div class="line-text"><p>The dream they built with their hands — they let it go with open hands.</p></div>
+      </div>
+      <div class="line-card right pain">
+        <div class="line-icon">🙏</div>
+        <div class="line-text"><p>Because for Amma and Nanna — <em>no dream is worth more than their child's heartbeat.</em></p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 7 -->
+  <div class="chapter">
+    <div class="chapter-label">
+      <div class="year-badge">2013 — 2019</div>
+      <div class="chapter-title">Rising, Again</div>
+    </div>
+    <div class="lines-block">
+      <div class="line-card left">
+        <div class="line-icon">🚶</div>
+        <div class="line-text"><p>Nanna hit the road — marketing, selling, surviving — <em>for his family.</em></p></div>
+      </div>
+      <div class="line-card left">
+        <div class="line-icon">⬆️</div>
+        <div class="line-text"><p>There were good days and terrible days, but he never stopped showing up.</p></div>
+      </div>
+      <div class="line-card left">
+        <div class="line-icon">📚</div>
+        <div class="line-text"><p>Every rupee earned was quietly placed at the altar of their children's education.</p></div>
+      </div>
+      <div class="line-card left">
+        <div class="line-icon">🤫</div>
+        <div class="line-text"><p>Their struggles? They <strong>hid them</strong> — so beautifully — behind morning tiffin and bedtime stories.</p></div>
+      </div>
+      <div class="line-card left">
+        <div class="line-icon">👁️</div>
+        <div class="line-text"><p>The children never knew the weight their parents carried — <em>that was the plan.</em></p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 8 — COVID -->
+  <div class="chapter">
+    <div class="chapter-label">
+      <div class="year-badge">2020</div>
+      <div class="chapter-title">When the World Stopped</div>
+    </div>
+    <div class="lines-block">
+      <div class="line-card right pain">
+        <div class="line-icon">🌑</div>
+        <div class="line-text"><p>COVID did not just lock the world — it forced impossible choices.</p></div>
+      </div>
+      <div class="line-card right pain">
+        <div class="line-icon">🏘️</div>
+        <div class="line-text"><p>They returned to their hometown — and the whispers followed.</p></div>
+      </div>
+      <div class="line-card right pain">
+        <div class="line-icon">👥</div>
+        <div class="line-text"><p><em>"They couldn't make it in Hyderabad,"</em> said the ones who never tried.</p></div>
+      </div>
+      <div class="line-card right pain">
+        <div class="line-icon">💛</div>
+        <div class="line-text"><p>But Amma and Nanna did not leave Hyderabad because they failed —</p></div>
+      </div>
+      <div class="line-card right pain">
+        <div class="line-icon">🌿</div>
+        <div class="line-text"><p>They left because <strong>their children's safety mattered more than anyone's opinion.</strong></p></div>
+      </div>
+      <div class="line-card right pain">
+        <div class="line-icon">🤐</div>
+        <div class="line-text"><p>They swallowed the shame the world handed them — and smiled at home.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 9 -->
+  <div class="chapter">
+    <div class="chapter-label">
+      <div class="year-badge">2025</div>
+      <div class="chapter-title">The Second Beginning</div>
+    </div>
+    <div class="lines-block">
+      <div class="line-card left">
+        <div class="line-icon">🌄</div>
+        <div class="line-text"><p>24 years after their wedding — they started over. <em>Again. In Shadnagar.</em></p></div>
+      </div>
+      <div class="line-card left">
+        <div class="line-icon">💼</div>
+        <div class="line-text"><p>Nanna picked up his bag and went back to the roads he knew so well.</p></div>
+      </div>
+      <div class="line-card left">
+        <div class="line-icon">🏡</div>
+        <div class="line-text"><p>Amma made yet another house feel like <em>home</em> — with nothing but her love.</p></div>
+      </div>
+      <div class="line-card left">
+        <div class="line-icon">🔥</div>
+        <div class="line-text"><p>They didn't restart because they had to — they restarted because <strong>they never gave up.</strong></p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 10 — GLORY -->
+  <div class="chapter">
+    <div class="chapter-label">
+      <div class="year-badge">2026</div>
+      <div class="chapter-title">The Answer to Every Prayer</div>
+    </div>
+    <div class="lines-block">
+      <div class="line-card right">
+        <div class="line-icon">🎓</div>
+        <div class="line-text"><p>Their first son — <em>the one they poured everything into</em> — got placed.</p></div>
+      </div>
+      <div class="line-card right">
+        <div class="line-icon">📞</div>
+        <div class="line-text"><p>The call that came that day — was the answer to every silent prayer they prayed alone.</p></div>
+      </div>
+      <div class="line-card right">
+        <div class="line-icon">😭</div>
+        <div class="line-text"><p>Somewhere, Amma cried tears she had saved for <strong>25 years.</strong></p></div>
+      </div>
+      <div class="line-card right">
+        <div class="line-icon">🏆</div>
+        <div class="line-text"><p>Nanna stood a little taller that day — not because he won a race,</p></div>
+      </div>
+      <div class="line-card right">
+        <div class="line-icon">🌟</div>
+        <div class="line-text"><p>but because <em>everything he sacrificed finally made sense.</em></p></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── CLIMAX ── -->
+<section class="climax-section">
+  <div class="climax-glow"></div>
+  <p class="climax-line">They never had a perfect life —</p>
+  <p class="climax-line">They had something far more beautiful —</p>
+  <p class="climax-line"><em>A real one.</em></p>
+  <p class="climax-line">Full of storms they sheltered each other through,</p>
+  <p class="climax-line">Full of mornings they chose to try again.</p>
+</section>
+
+<!-- ── FINAL ── -->
+<section class="final-section">
+  <div class="final-names">Amma & Nanna</div>
+  <p class="final-line">You did not just raise a family —</p>
+  <p class="final-line">You <em>became</em> the definition of what a family should be.</p>
+  <p class="final-line">Your children saw everything — even what you tried to hide.</p>
+  <p class="final-line">And what they saw — made them <strong>who they are.</strong></p>
+  <div class="divider-line" style="opacity:1; margin-top: 2.5rem;"></div>
+  <div class="final-blessing">
+    25 years. 1 love. Infinite courage. <span class="heart">♥</span><br>
+    <span style="font-size: 0.7em; letter-spacing: 0.25em; color: var(--muted); font-style: italic;">
+      Happy Silver Jubilee — from your children, who are forever proud of you.
+    </span>
+  </div>
+</section>
+
+<!-- ── EXPORT ── -->
+<div class="export-section">
+  <div class="export-title">📋 Video Script — Line by Line</div>
+  <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Click below to see all lines numbered for your video editor</p>
+  <button class="export-btn" onclick="toggleScript()">Show Full Script</button>
+  <div id="script-output">
+    <ol id="script-lines"></ol>
+  </div>
+</div>
+
+<script>
+// ── SCROLL REVEAL ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), 120);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.line-card, .climax-line, .final-names, .final-line, .final-blessing')
+  .forEach(el => observer.observe(el));
+
+// Stagger line cards within each block
+document.querySelectorAll('.lines-block').forEach(block => {
+  block.querySelectorAll('.line-card').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.12}s`;
+  });
+});
+
+// ── ALL LINES FOR SCRIPT ──
+const allLines = [
+  // Hero
+  "— TITLE CARD — Amma & Nanna | A love that carried a family on its shoulders",
+  "— SUBTITLE — 25 Years of Togetherness",
+  // Intro
+  "Some love stories are not written in poetry.",
+  "They are written in sacrifice, in silence,",
+  "in the tears that children never saw —",
+  "and in a stubborn, beautiful refusal to give up.",
+  // 2001
+  "— DATE — 6 May 2001 · The Beginning of Everything",
+  "Two souls stood before God and family, and said — 'I choose you.'",
+  "She tied her life to his with flowers in her hair and hope in her heart.",
+  "He promised her a life — not knowing how much courage that promise would demand.",
+  "That day, a family was not just formed — it was born.",
+  // 2001-2003
+  "— 2001–2003 · When Dreams Met Reality",
+  "The road wasn't paved with gold — it was rough, unlit, and long.",
+  "But they walked it — together — never letting the other fall alone.",
+  "Every prayer they offered was not for themselves — it was for each other.",
+  // 2004
+  "— DATE — 4 July 2004 · A Cry That Changed Everything",
+  "On a summer morning, the world gave them its greatest gift —",
+  "A baby's cry filled the room, and two hearts broke open with joy.",
+  "That night, Nanna held his firstborn and understood — everything he worked for now had a face.",
+  "Amma became a mother — and she was made for it.",
+  // 2005-2007
+  "— 2005–2007 · Hyderabad — The Big Dream",
+  "They packed their lives and moved to the city — for a better tomorrow.",
+  "Nanna opened a shop with sweat, savings, and a stubborn dream.",
+  "Business grew. Life smiled. For a while — the city felt like home.",
+  "Amma ran the home like a temple — warm, quiet, full of love.",
+  // 2008
+  "— DATE — 14 December 2008 · The Second Blessing",
+  "God blessed them again — another heartbeat joined their home.",
+  "Their family was complete. Two sons. One dream. No limits.",
+  "That December was the warmest winter they had ever felt.",
+  // 2009-2012
+  "— 2009–2012 · The Test No Parent Asks For",
+  "The little one's heart — the one that held so much love — needed help.",
+  "Hospital visits became their routine. Prayers became their breath.",
+  "To save their child, they sold the shop — without a second thought.",
+  "The dream they built with their hands — they let it go with open hands.",
+  "Because for Amma and Nanna — no dream is worth more than their child's heartbeat.",
+  // 2013-2019
+  "— 2013–2019 · Rising, Again",
+  "Nanna hit the road — marketing, selling, surviving — for his family.",
+  "There were good days and terrible days, but he never stopped showing up.",
+  "Every rupee earned was quietly placed at the altar of their children's education.",
+  "Their struggles? They hid them — so beautifully — behind morning tiffin and bedtime stories.",
+  "The children never knew the weight their parents carried — that was the plan.",
+  // 2020
+  "— 2020 · When the World Stopped",
+  "COVID did not just lock the world — it forced impossible choices.",
+  "They returned to their hometown — and the whispers followed.",
+  "'They couldn't make it in Hyderabad,' said the ones who never tried.",
+  "But Amma and Nanna did not leave Hyderabad because they failed —",
+  "They left because their children's safety mattered more than anyone's opinion.",
+  "They swallowed the shame the world handed them — and smiled at home.",
+  // 2025
+  "— 2025 · The Second Beginning",
+  "24 years after their wedding — they started over. Again. In Shadnagar.",
+  "Nanna picked up his bag and went back to the roads he knew so well.",
+  "Amma made yet another house feel like home — with nothing but her love.",
+  "They didn't restart because they had to — they restarted because they never gave up.",
+  // 2026
+  "— 2026 · The Answer to Every Prayer",
+  "Their first son — the one they poured everything into — got placed.",
+  "The call that came that day — was the answer to every silent prayer they prayed alone.",
+  "Somewhere, Amma cried tears she had saved for 25 years.",
+  "Nanna stood a little taller that day — not because he won a race,",
+  "but because everything he sacrificed finally made sense.",
+  // Climax
+  "— CLIMAX —",
+  "They never had a perfect life —",
+  "They had something far more beautiful —",
+  "A real one.",
+  "Full of storms they sheltered each other through,",
+  "Full of mornings they chose to try again.",
+  // Final
+  "— FINAL —",
+  "You did not just raise a family —",
+  "You became the definition of what a family should be.",
+  "Your children saw everything — even what you tried to hide.",
+  "And what they saw — made them who they are.",
+  "— CLOSING TITLE — 25 years. 1 love. Infinite courage. ♥",
+  "Happy Silver Jubilee — from your children, who are forever proud of you."
+];
+
+function toggleScript() {
+  const out = document.getElementById('script-output');
+  const btn = document.querySelector('.export-btn');
+  if (!out.classList.contains('show')) {
+    const ol = document.getElementById('script-lines');
+    ol.innerHTML = allLines.map(l => `<li><span>${l}</span></li>`).join('');
+    out.classList.add('show');
+    btn.textContent = 'Hide Script';
+  } else {
+    out.classList.remove('show');
+    btn.textContent = 'Show Full Script';
+  }
+}
+</script>
+</body>
+</html>
