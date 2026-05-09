@@ -129,10 +129,10 @@
     font-size: 1.1em;
   }
 
-  /* ── STORY BLOCKS ── */
+  /* ── STORY BLOCKS (Replacing Timeline) ── */
   .story-container {
     padding: 2rem 2rem 6rem;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -198,44 +198,6 @@
     color: var(--slate);
   }
 
-  /* ── IMAGE STYLING ── */
-  .photo-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-bottom: 2.5rem;
-  }
-
-  .photo-single {
-    width: 100%;
-    margin-bottom: 2.5rem;
-    display: flex;
-    justify-content: center;
-  }
-
-  .story-img {
-    width: 100%;
-    max-height: 450px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(74, 92, 106, 0.15);
-    border: 4px solid var(--white);
-    opacity: 0;
-    transform: translateY(15px);
-    transition: all 1.2s ease;
-  }
-
-  .photo-single .story-img {
-    max-width: 600px;
-    max-height: 500px;
-  }
-
-  .story-img.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ── TEXT LINES ── */
   .card-lines {
     display: flex;
     flex-direction: column;
@@ -372,7 +334,6 @@
     .story-card { padding: 2.5rem 1.5rem; border-radius: 16px; }
     .story-card::before { width: 4px; border-radius: 16px 0 0 16px; }
     .line-item { gap: 1rem; }
-    .photo-grid { grid-template-columns: 1fr; gap: 1rem; }
   }
 </style>
 </head>
@@ -401,19 +362,12 @@
 <!-- ── STORY CARDS ── -->
 <div class="story-container">
 
-  <!-- CHAPTER 1 (Wedding Photos) -->
+  <!-- CHAPTER 1 -->
   <div class="story-card scroll-anim">
     <div class="card-header">
       <span class="card-date">6 May 2001</span>
       <h2 class="card-title heading-font">The Beginning of Everything</h2>
     </div>
-    
-    <!-- Photo Grid for the wedding ceremony images -->
-    <div class="photo-grid">
-      <img src="tying-mangalsutra.jpg" alt="Wedding Ceremony - Tying the knot" class="story-img scroll-anim">
-      <img src="washing-feet.jpg" alt="Wedding Ritual - Washing Feet" class="story-img scroll-anim">
-    </div>
-
     <div class="card-lines">
       <div class="line-item">
         <span class="line-marker">✦</span>
@@ -434,18 +388,12 @@
     </div>
   </div>
 
-  <!-- CHAPTER 2 (Early Years Vintage Portrait) -->
+  <!-- CHAPTER 2 -->
   <div class="story-card pain scroll-anim">
     <div class="card-header">
       <span class="card-date">2001 — 2003</span>
       <h2 class="card-title heading-font">When Dreams Met Reality</h2>
     </div>
-
-    <!-- Single Photo for early formal portrait -->
-    <div class="photo-single">
-      <img src="vintage-portrait-formal.jpg" alt="Early Days Portrait" class="story-img scroll-anim">
-    </div>
-
     <div class="card-lines">
       <div class="line-item">
         <span class="line-marker">✧</span>
@@ -488,18 +436,12 @@
     </div>
   </div>
 
-  <!-- CHAPTER 4 (Sitting Formal Portrait) -->
+  <!-- CHAPTER 4 -->
   <div class="story-card scroll-anim">
     <div class="card-header">
       <span class="card-date">2005 — 2007</span>
       <h2 class="card-title heading-font">Hyderabad — The Big Dream</h2>
     </div>
-
-    <!-- Single Photo for the seated sepia portrait -->
-    <div class="photo-single">
-      <img src="sepia-seated-portrait.jpg" alt="Seated Vintage Portrait" class="story-img scroll-anim">
-    </div>
-
     <div class="card-lines">
       <div class="line-item">
         <span class="line-marker">✦</span>
@@ -520,7 +462,7 @@
     </div>
   </div>
 
-  <!-- CHAPTER 5 & 6 & 7 (Skipped images for pacing) -->
+  <!-- CHAPTER 5 -->
   <div class="story-card scroll-anim">
     <div class="card-header">
       <span class="card-date">14 December 2008</span>
@@ -542,6 +484,7 @@
     </div>
   </div>
 
+  <!-- CHAPTER 6 -->
   <div class="story-card pain scroll-anim">
     <div class="card-header">
       <span class="card-date">2009 — 2012</span>
@@ -564,21 +507,19 @@
         <span class="line-marker">✧</span>
         <p class="line-text">The dream they built with their hands — they let it go with open hands.</p>
       </div>
+      <div class="line-item">
+        <span class="line-marker">✧</span>
+        <p class="line-text">Because for Amma and Nanna — <em>no dream is worth more than their child's heartbeat.</em></p>
+      </div>
     </div>
   </div>
 
-  <!-- CHAPTER 7 (Recent Lake/Water Photo) -->
+  <!-- CHAPTER 7 -->
   <div class="story-card scroll-anim">
     <div class="card-header">
       <span class="card-date">2013 — 2019</span>
       <h2 class="card-title heading-font">Rising, Again</h2>
     </div>
-
-    <!-- Single Photo by the water -->
-    <div class="photo-single">
-      <img src="waterfront-recent.jpg" alt="Standing near the water" class="story-img scroll-anim">
-    </div>
-
     <div class="card-lines">
       <div class="line-item">
         <span class="line-marker">✦</span>
@@ -596,27 +537,80 @@
         <span class="line-marker">✦</span>
         <p class="line-text">Their struggles? They <strong>hid them</strong> — so beautifully — behind morning tiffin and bedtime stories.</p>
       </div>
+      <div class="line-item">
+        <span class="line-marker">✦</span>
+        <p class="line-text">The children never knew the weight their parents carried — <em>that was the plan.</em></p>
+      </div>
     </div>
   </div>
 
-  <!-- CHAPTER 9 & 10 (Temple Photos representing blessings and peace) -->
+  <!-- CHAPTER 8 -->
+  <div class="story-card pain scroll-anim">
+    <div class="card-header">
+      <span class="card-date">2020</span>
+      <h2 class="card-title heading-font">When the World Stopped</h2>
+    </div>
+    <div class="card-lines">
+      <div class="line-item">
+        <span class="line-marker">✧</span>
+        <p class="line-text">COVID did not just lock the world — it forced impossible choices.</p>
+      </div>
+      <div class="line-item">
+        <span class="line-marker">✧</span>
+        <p class="line-text">They returned to their hometown — and the whispers followed.</p>
+      </div>
+      <div class="line-item">
+        <span class="line-marker">✧</span>
+        <p class="line-text"><em>"They couldn't make it in Hyderabad,"</em> said the ones who never tried.</p>
+      </div>
+      <div class="line-item">
+        <span class="line-marker">✧</span>
+        <p class="line-text">But Amma and Nanna did not leave Hyderabad because they failed.</p>
+      </div>
+      <div class="line-item">
+        <span class="line-marker">✧</span>
+        <p class="line-text">They left because <strong>their children's safety mattered more than anyone's opinion.</strong></p>
+      </div>
+      <div class="line-item">
+        <span class="line-marker">✧</span>
+        <p class="line-text">They swallowed the shame the world handed them — and smiled at home.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 9 -->
   <div class="story-card scroll-anim">
     <div class="card-header">
-      <span class="card-date">2025 - 2026</span>
-      <h2 class="card-title heading-font">The Answer to Every Prayer</h2>
+      <span class="card-date">2025</span>
+      <h2 class="card-title heading-font">The Second Beginning</h2>
     </div>
-
-    <!-- Photo Grid for the recent Temple visits -->
-    <div class="photo-grid">
-      <img src="temple-night-1.jpg" alt="Temple Visit at Night" class="story-img scroll-anim">
-      <img src="temple-night-2.jpg" alt="Temple Architecture at Night" class="story-img scroll-anim">
-    </div>
-
     <div class="card-lines">
       <div class="line-item">
         <span class="line-marker">✦</span>
         <p class="line-text">24 years after their wedding — they started over. <em>Again. In Shadnagar.</em></p>
       </div>
+      <div class="line-item">
+        <span class="line-marker">✦</span>
+        <p class="line-text">Nanna picked up his bag and went back to the roads he knew so well.</p>
+      </div>
+      <div class="line-item">
+        <span class="line-marker">✦</span>
+        <p class="line-text">Amma made yet another house feel like <em>home</em> — with nothing but her love.</p>
+      </div>
+      <div class="line-item">
+        <span class="line-marker">✦</span>
+        <p class="line-text">They didn't restart because they had to — they restarted because <strong>they never gave up.</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 10 -->
+  <div class="story-card scroll-anim">
+    <div class="card-header">
+      <span class="card-date">2026</span>
+      <h2 class="card-title heading-font">The Answer to Every Prayer</h2>
+    </div>
+    <div class="card-lines">
       <div class="line-item">
         <span class="line-marker">✦</span>
         <p class="line-text">Their first son — <em>the one they poured everything into</em> — got placed.</p>
@@ -627,7 +621,15 @@
       </div>
       <div class="line-item">
         <span class="line-marker">✦</span>
-        <p class="line-text">Nanna stood a little taller that day — not because he won a race, but because <em>everything he sacrificed finally made sense.</em></p>
+        <p class="line-text">Somewhere, Amma cried tears she had saved for <strong>25 years.</strong></p>
+      </div>
+      <div class="line-item">
+        <span class="line-marker">✦</span>
+        <p class="line-text">Nanna stood a little taller that day — not because he won a race,</p>
+      </div>
+      <div class="line-item">
+        <span class="line-marker">✦</span>
+        <p class="line-text">but because <em>everything he sacrificed finally made sense.</em></p>
       </div>
     </div>
   </div>
@@ -643,14 +645,8 @@
   <p class="climax-p" style="transition-delay: 1.2s; font-size: clamp(1.2rem, 3vw, 1.8rem);">Full of mornings they chose to try again.</p>
 </section>
 
-<!-- ── FINAL TRIBUTE (Garland Photo) ── -->
+<!-- ── FINAL TRIBUTE ── -->
 <footer class="final-tribute scroll-anim">
-  
-  <!-- Final triumphant photo with garlands -->
-  <div class="photo-single" style="margin-bottom: 3rem;">
-    <img src="anniversary-garlands.jpg" alt="Smiling with Garlands" class="story-img scroll-anim" style="border-color: var(--slate); max-height: 400px; width: auto;">
-  </div>
-
   <h2 class="final-names heading-font">Amma & Nanna</h2>
   <p class="final-text">You did not just raise a family —</p>
   <p class="final-text">You <em>became</em> the definition of what a family should be.</p>
@@ -679,12 +675,8 @@
           entry.target.querySelector('.final-names').classList.add('reveal');
           entry.target.querySelectorAll('.final-text').forEach(t => t.classList.add('reveal'));
           entry.target.querySelector('.final-footer').classList.add('reveal');
-          const finalImg = entry.target.querySelector('.story-img');
-          if(finalImg) finalImg.classList.add('visible');
         } else {
           entry.target.classList.add('visible');
-          // Also trigger images inside this card
-          entry.target.querySelectorAll('.story-img').forEach(img => img.classList.add('visible'));
         }
         observer.unobserve(entry.target);
       }
